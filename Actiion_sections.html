@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    .action-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+    }
+
+    .action-left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .action-left h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .action-left p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .live-preview-btn {
+      padding: 10px 22px;
+      background-color: #4f46e5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .live-preview-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .action-right {
+      flex: 1;
+      text-align: center;
+    }
+
+    .action-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="action-section">
+    <div class="action-left">
+      <h2>See It in Action</h2>
+      <p>Explore how our dark UI template enhances your workflow and design process effortlessly.</p>
+      <button class="live-preview-btn">Launch Live Preview</button>
+    </div>
+    <div class="action-right">
+      <img src="Assets/wc-mini.png" alt="privew">
+    </div>
+  </div>
+</body>
+</html>
