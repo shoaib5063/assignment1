@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: #4f46e5;
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      background-color: #4338ca;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero {
+      background-image: url('Assets/Hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      padding: 20px 60px 100px 60px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .banner {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .banner h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      padding: 80px 60px;
+    }
+
+    .action-section,
+    .ready-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .action-left,
+    .ready-left {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 40px;
+    }
+
+    .action-right,
+    .ready-right {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .action-right img,
+    .ready-right img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .productive-users-wrapper {
+      background-color: #eef2f7;
+      padding: 80px 0;
+    }
+
+    .productive-users {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .productive-users h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .stat {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+      width: 200px;
+    }
+
+    .stat h3 {
+      font-size: 26px;
+      color: #4f46e5;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .stat p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-left {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 40px;
+    }
+
+    .contact-left h2 {
+      font-size: 100px;
+      font-weight: 700;
+    }
+
+    .contact-right {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f9fafb;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f9fafb;
+    }
+
+    .footer .logo {
+      font-size: 240px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #4f46e5;
+    }
+
+    .footer .subtitle {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .feedback-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .feedback-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .feedback-section p.subtitle {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .feedback-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feedback-card {
+      background-color: #f9fafb;
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .stars {
+      margin-bottom: 15px;
+    }
+
+    .stars img {
+      height: 20px;
+      width: 20px;
+      margin-right: 4px;
+    }
+
+    .review-text {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reviewer-info strong {
+      font-size: 14px;
+    }
+
+    .reviewer-info span {
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero (Navbar + Banner) -->
+  <div class="hero">
+    <div class="navbar">
+      <div class="logo">LOGO</div>
+      <button class="btn">Sign Up</button>
+    </div>
+    <div class="banner">
+      <h1>Cool Dark UI Template for <br> WebFlow Agencies!</h1>
+      <button class="btn">Stay Focused</button>
+    </div>
+  </div>
+
+  <!-- Action Section -->
+  <section class="section action-section">
+    <div class="action-left">
+      <h2>See It in Action</h2>
+      <br>
+      <p>Explore how our dark UI template enhances your workflow and design process effortlessly.</p>
+      <br>
+      <button class="btn">Launch Live Preview</button>
+    </div>
+    <div class="action-right">
+      <img src="Assets/wc-mini.png" alt="Webflow Preview">
+    </div>
+  </section>
+
+  <!-- Productive Users Section -->
+  <section class="productive-users-wrapper">
+    <div class="productive-users">
+      <h2>Our Productive Users</h2>
+      <div class="stats-container">
+        <div class="stat">
+          <h3>50K+</h3>
+          <p>Active Users</p>
+        </div>
+        <div class="stat">
+          <h3>2M+</h3>
+          <p>Downloads</p>
+        </div>
+        <div class="stat">
+          <h3>95%</h3>
+          <p>User Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get in Touch Section -->
+  <section class="section contact-section">
+    <div class="contact-left">
+      <h2>Let’s Get in<br>Touch</h2>
+    </div>
+    <div class="contact-right">
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Get in Touch</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Users Feedback Section -->
+  <section class="feedback-section">
+    <h2>What our users say</h2>
+    <p class="subtitle">Real feedback from real users. Here's what they think about our UI template.</p>
+    <div class="feedback-container">
+      <div class="feedback-card">
+        <div class="stars">
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+        </div>
+        <p class="review-text">“Super clean design and easy to work with. Highly recommend for any Webflow project.”</p>
+        <div class="reviewer">
+          <img src="Assets/avatar.png" alt="Reviewer" />
+          <div class="reviewer-info">
+            <strong>Sarah Ahmed</strong>
+            <span>Jan 12, 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <div class="stars">
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+        </div>
+        <p class="review-text">“It saved me hours of work! The layout is professional and looks great on all devices.”</p>
+        <div class="reviewer">
+          <img src="Assets/avatar.png" alt="Reviewer" />
+          <div class="reviewer-info">
+            <strong>James Tanvir</strong>
+            <span>Feb 18, 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <div class="stars">
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+          <img src="Assets/icon-star.png" alt="Star" />
+        </div>
+        <p class="review-text">“Beautiful and simple to customize. My clients loved the final result!”</p>
+        <div class="reviewer">
+          <img src="Assets/avatar.png" alt="Reviewer" />
+          <div class="reviewer-info">
+            <strong>Rafiul Kabir</strong>
+            <span>Mar 05, 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ready to Focus Section -->
+  <section class="section ready-section">
+    <div class="ready-left">
+      <h2>Ready to Focus?</h2>
+      <br>
+      <p>Start using our powerful dark UI Webflow template and stay focused on what matters most. Designed to impress and optimized to convert.</p>
+      <br>
+      <button class="btn">Stay Focused</button>
+    </div>
+    <div class="ready-right">
+      <img src="Assets/wc-big.png" alt="Webflow Big Preview">
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="logo">LOGO</div>
+    <div class="subtitle">Simple and elegant UI templates for your Webflow projects.</div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">How it works</a>
+      <a href="#">Services</a>
+    </div>
+  </footer>
+
+</body>
+</html>
